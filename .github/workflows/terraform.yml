@@ -34,6 +34,18 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
+      
+    - name: Azure Login
+      uses: Azure/login@v1.4.6
+      with:
+    # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+      creds: # optional
+    # ClientId of the Azure Service principal created.
+      client-id: # optional
+    # TenantId of the Azure Service principal created.
+      tenant-id: # optional
+    # Azure subscriptionId
+      subscription-id: # optional
 
 
 
