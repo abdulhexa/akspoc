@@ -30,3 +30,7 @@ output "cluster_ca_certificate" {
 output "host" {
   value = azurerm_kubernetes_cluster.example.kube_config.0.host
 }
+
+output "login_server" {
+  value = "${azurerm_container_registry.example.login_server}"
+}
